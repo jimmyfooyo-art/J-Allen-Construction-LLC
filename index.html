@@ -1,1 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>J Allen Construction LLC | Fox Valley Concrete</title>
+  <meta name="description" content="J Allen Construction LLC provides concrete services throughout the Fox Valley. Patios, driveways, walkways, stamped concrete and more.">
+  <style>
+    :root {
+      --coal: #151719;
+      --steel: #24292d;
+      --stone: #d6d1c7;
+      --cream: #f5f1e9;
+      --orange: #ee6c2f;
+      --orange-bright: #ff8a4d;
+    }
 
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      color: var(--cream);
+      background: var(--coal);
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    .topbar {
+      position: sticky;
+      z-index: 10;
+      top: 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 12px clamp(20px, 5vw, 70px);
+      background: rgba(21, 23, 25, .94);
+      border-bottom: 1px solid rgba(255,255,255,.12);
+      backdrop-filter: blur(12px);
+    }
+
+    .brand img {
+      display: block;
+      width: 160px;
+      max-height: 52px;
+      object-fit: contain;
+      object-position: left center;
+    }
+
+    .phone {
+      font-weight: 800;
+      letter-spacing: .04em;
+      color: var(--orange-bright);
+    }
+
+    .hero {
+      position: relative;
+      min-height: 78vh;
+      display: flex;
+      align-items: end;
+      overflow: hidden;
+      background:
+        linear-gradient(90deg, rgba(14,15,16,.94) 0%, rgba(14,15,16,.63) 42%, rgba(14,15,16,.22) 100%),
+        linear-gradient(0deg, rgba(14,15,16,.82), transparent 60%),
+        url("J Allen Construction Llc/769625866_122314207106222902_7195329009437925958_n.jpg") center / cover;
+    }
+
+    .hero-content {
+      width: min(100% - 40px, 1200px);
+      margin: 0 auto;
+      padding: 110px 0 78px;
+    }
+
+    .kicker {
+      margin: 0 0 18px;
+      color: var(--orange-bright);
+      font-size: .78rem;
+      font-weight: 800;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      max-width: 780px;
+      margin: 0;
+      font-family: Impact, "Arial Black", sans-serif;
+      font-size: clamp(3.6rem, 9vw, 8.5rem);
+      line-height: .88;
+      letter-spacing: -.035em;
+      text-transform: uppercase;
+    }
+
+    .hero p {
+      max-width: 565px;
+      margin: 28px 0;
+      color: #e7e2d9;
+      font-size: clamp(1.05rem, 2vw, 1.3rem);
+      line-height: 1.55;
+    }
+
+    .button {
+      display: inline-block;
+      padding: 16px 22px;
+      background: var(--orange);
+      color: #171717;
+      font-size: .9rem;
+      font-weight: 900;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      transition: transform .15s, background .15s;
+    }
+
+    .button:hover {
+      background: var(--orange-bright);
+      transform: translateY(-2px);
+    }
+
+    .strip {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      background: var(--orange);
+      color: #171717;
+    }
+
+    .strip div {
+      padding: 22px clamp(18px, 4vw, 55px);
+      border-right: 1px solid rgba(0,0,0,.22);
+      font-size: .9rem;
+      font-weight: 900;
+      letter-spacing: .07em;
+      text-align: center;
+      text-transform: uppercase;
+    }
+
+    section { padding: 92px clamp(20px, 5vw, 70px); }
+
+    .section-head {
+      display: flex;
+      gap: 24px;
+      align-items: end;
+      justify-content: space-between;
+      max-width: 1200px;
+      margin: 0 auto 38px;
+    }
+
+    h2 {
+      max-width: 760px;
+      margin: 0;
+      font-family: Impact, "Arial Black", sans-serif;
+      font-size: clamp(2.5rem, 5vw, 5rem);
+      line-height: .94;
+      letter-spacing: -.025em;
+      text-transform: uppercase;
+    }
+
+    .intro {
+      max-width: 1200px;
+      margin: 0 auto;
+      font-size: clamp(1.15rem, 2vw, 1.45rem);
+      line-height: 1.6;
+      color: #ded8cd;
+    }
+
+    .services {
+      background: var(--steel);
+    }
+
+    .service-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2px;
+      max-width: 1200px;
+      margin: 0 auto;
+      background: rgba(255,255,255,.13);
+    }
+
+    .service {
+      min-height: 175px;
+      padding: 28px;
+      background: var(--steel);
+    }
+
+    .service span {
+      display: block;
+      margin-bottom: 42px;
+      color: var(--orange-bright);
+      font-size: .76rem;
+      font-weight: bold;
+      letter-spacing: .12em;
+    }
+
+    .service strong {
+      display: block;
+      font-size: 1.35rem;
+      line-height: 1.12;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 10px;
+      max-width: 1440px;
+      margin: 0 auto;
+    }
+
+    .gallery img {
+      width: 100%;
+      height: 100%;
+      min-height: 250px;
+      display: block;
+      object-fit: cover;
+      background: var(--steel);
+      cursor: pointer;
+      transition: opacity .2s, transform .2s;
+    }
+
+    .gallery img:hover {
+      opacity: .82;
+      transform: scale(.985);
+    }
+
+    .gallery .wide { grid-column: span 7; }
+    .gallery .small { grid-column: span 5; }
+    .gallery .third { grid-column: span 4; }
+
+    .contact {
+      background:
+        linear-gradient(90deg, rgba(17,18,19,.95), rgba(17,18,19,.72)),
+        url("J Allen Construction Llc/766797115_122314207094222902_1488106671600276503_n.jpg") center / cover;
+    }
+
+    .contact-inner {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 35px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .contact p {
+      max-width: 560px;
+      font-size: 1.2rem;
+      line-height: 1.55;
+      color: #ded8cd;
+    }
+
+    footer {
+      padding: 28px clamp(20px, 5vw, 70px);
+      display: flex;
+      gap: 18px;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      color: #aaa59c;
+      font-size: .85rem;
+      border-top: 1px solid rgba(255,255,255,.12);
+    }
+
+    @media (max-width: 720px) {
+      .topbar { padding: 10px 18px; }
+      .brand img { width: 125px; }
+      .phone { font-size: .8rem; }
+      .strip, .service-grid { grid-template-columns: 1fr; }
+      .strip div { border-bottom: 1px solid rgba(0,0,0,.22); }
+      .section-head, .contact-inner { display: block; }
+      .section-head p { margin-top: 20px; }
+      .gallery { grid-template-columns: 1fr; }
+      .gallery .wide, .gallery .small, .gallery .third { grid-column: auto; }
+      .gallery img { min-height: 260px; }
+    }
+  </style>
+</head>
+
+<body>
+  <header class="topbar">
+    <a class="brand" href="#top">
+      <img src="J Allen Construction Llc/Logo.jpg" alt="J Allen Construction LLC">
+    </a>
+    <a class="phone" href="tel:9204700505">920-470-0505</a>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="hero-content">
+        <p class="kicker">Fox Valley Concrete Construction</p>
+        <h1>Built to<br>hold up.</h1>
+        <p>
+          Concrete work built with pride, experience, and the kind of attention
+          you can see long after the trucks leave.
+        </p>
+        <a class="button" href="tel:9204700505">Call for a free estimate</a>
+      </div>
+    </section>
+
+    <div class="strip">
+      <div>20 years experience</div>
+      <div>Serving the Fox Valley</div>
+      <div>Free estimates</div>
+    </div>
+
+    <section>
+      <div class="section-head">
+        <h2>Concrete that belongs there.</h2>
+      </div>
+      <p class="intro">
+        From a driveway that takes the daily beating to a backyard built for
+        people to gather in, J Allen Construction LLC brings practical skill
+        and solid finish work to every project.
+      </p>
+    </section>
+
+    <section class="services">
+      <div class="section-head">
+        <div>
+          <p class="kicker">What we build</p>
+          <h2>From the ground up.</h2>
+        </div>
+      </div>
+
+      <div class="service-grid">
+        <div class="service"><span>01</span><strong>Driveways & Concrete Pads</strong></div>
+        <div class="service"><span>02</span><strong>Patios & Outdoor Living</strong></div>
+        <div class="service"><span>03</span><strong>Walkways & Sidewalks</strong></div>
+        <div class="service"><span>04</span><strong>Stamped & Decorative Concrete</strong></div>
+        <div class="service"><span>05</span><strong>Fire Pits & Gathering Spaces</strong></div>
+        <div class="service"><span>06</span><strong>Concrete Repairs & More</strong></div>
+      </div>
+    </section>
+
+    <section>
+      <div class="section-head">
+        <div>
+          <p class="kicker">Recent work</p>
+          <h2>Proof is in the pour.</h2>
+        </div>
+      </div>
+
+      <div class="gallery">
+        <img class="wide" src="J Allen Construction Llc/769625866_122314207106222902_7195329009437925958_n.jpg" alt="Finished J Allen Construction concrete project">
+        <img class="small" src="J Allen Construction Llc/768408580_122314207136222902_7976986659568937018_n.jpg" alt="Concrete project detail">
+        <img class="third" src="J Allen Construction Llc/767222218_122314207154222902_4456061078194376120_n.jpg" alt="J Allen Construction work">
+        <img class="third" src="J Allen Construction Llc/767031519_122314207124222902_3274240067866720873_n.jpg" alt="Finished concrete work">
+        <img class="third" src="J Allen Construction Llc/766797115_122314207094222902_1488106671600276503_n.jpg" alt="Concrete construction project">
+        <img class="small" src="J Allen Construction Llc/745699557_122309876252222902_232107158529116329_n.jpg" alt="J Allen Construction project">
+        <img class="wide" src="J Allen Construction Llc/745830924_122309876132222902_3835051656663888886_n.jpg" alt="Concrete patio project">
+        <img class="third" src="J Allen Construction Llc/654568304_122291628008222902_5832303785620888828_n.jpg" alt="Concrete work in progress">
+        <img class="third" src="J Allen Construction Llc/655950413_122291627912222902_2744955716851342471_n.jpg" alt="Finished concrete detail">
+        <img class="third" src="J Allen Construction Llc/565617800_122263447154222902_2305802519837427661_n.jpg" alt="J Allen Construction work">
+      </div>
+    </section>
+
+    <section class="contact">
+      <div class="contact-inner">
+        <div>
+          <p class="kicker">Let’s talk about your project</p>
+          <h2>Ready when you are.</h2>
+          <p>Call J Allen Construction LLC and get a straightforward estimate for your concrete project.</p>
+        </div>
+        <a class="button" href="tel:9204700505">920-470-0505</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <span>J Allen Construction LLC · Fox Valley, Wisconsin</span>
+    <a href="https://www.facebook.com/61556687074239/" target="_blank" rel="noopener">Find us on Facebook</a>
+  </footer>
+</body>
+</html>
